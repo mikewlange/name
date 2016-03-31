@@ -31,8 +31,8 @@ def main(params_file):
     # read configuration file and check
     utils.read_config(params_file, params)
     gen_class = GenderClassifier()
-    #gen_class.loadData(params['process_country_gender_output_file_gender'], params['gender_classifier_model_file'])
-    gen_class.loadModel(params['gender_classifier_model_file'])
+    gen_class.loadData(params['process_country_gender_output_file_gender'], params['gender_classifier_model_file'])
+    #gen_class.loadModel(params['gender_classifier_model_file'])
     t1 = time.time()
     print gen_class.predict('Diyi Yang')
     t2 = time.time()
@@ -91,8 +91,8 @@ class GenderClassifier:
                 line_idx += 1
                 if line_idx % 1000 == 0:
                     print '%d lines read' %line_idx
-                if line_idx > 100000:
-                    break
+                #if line_idx > 100000:
+                #    break
                 name, gender = line.strip().split('\t')
                 features = self._nameFeatures(name, False)
         	for feature in features:
@@ -137,8 +137,8 @@ class GenderClassifier:
         print len(self.Y)
         print np.sum(self.Y)
 
-        self.clf = tree.DecisionTreeClassifier()
-        #self.clf = RandomForestClassifier(n_estimators=1, min_samples_leaf=1)
+        self.clf = tree.DecisionTreeClassifier(min_samples_leaf=10)
+        #self.clf = RandomForestClassifier(n_estimators=100, min_samples_leaf=10)
         #self.clf = svm.SVC()
 	t1 = time.time()
         self.clf = self.clf.fit(self.X, self.Y)
