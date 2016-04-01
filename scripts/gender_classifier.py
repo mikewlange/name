@@ -31,8 +31,8 @@ def main(params_file):
     # read configuration file and check
     utils.read_config(params_file, params)
     gen_class = GenderClassifier()
-    gen_class.loadData(params['process_country_gender_output_file_gender'], params['gender_classifier_model_file'])
-    #gen_class.loadModel(params['gender_classifier_model_file'])
+    #gen_class.loadData(params['process_country_gender_output_file_gender'], params['gender_classifier_model_file'])
+    gen_class.loadModel(params['gender_classifier_model_file'])
     t1 = time.time()
     print gen_class.predict('Diyi Yang')
     t2 = time.time()
@@ -46,6 +46,18 @@ def main(params_file):
     print gen_class.predict('Qi Guo')
     print gen_class.predict('Eric Xing')
     print gen_class.predict('Yiming Yang')
+    print gen_class.predict('Xiaoping Deng')
+    print gen_class.predict('Yidi Zhao')
+    print gen_class.predict('Yuanchi Ning')
+    print gen_class.predict('Jinping Xi')
+    print gen_class.predict('Liyuan Peng')
+    print gen_class.predict('Wei-chiu Ma')
+    print gen_class.predict('Zhiting Hu')
+    print gen_class.predict('Hao Zhang')
+    print gen_class.predict('Li Zhou')
+    print gen_class.predict('Shayan Doroudi')
+    print gen_class.predict('Daniel Guo')
+    print gen_class.predict('Christoph Dann')
 class GenderClassifier:
     def __init__(self):
         self.non_letters = r'[^a-zA-Z ]'
