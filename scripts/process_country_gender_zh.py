@@ -4,6 +4,8 @@
 import sys, os, subprocess, time, codecs, re, shutil, glob
 import utils
 from xpinyin import Pinyin
+from langconv import *
+import string
 
 def main(params_file):
     params = {}
@@ -34,20 +36,22 @@ def process_country_gender(params):
                         print '%d lines processed' %line_idx
                     id, name, place_of_birth, nationality, male_cnt, female_cnt = line.strip().split('\t')
                     if is_chinese(name):
-                        confidence, country = get_place_of_birth(place_of_birth)
-                        if (confidence > 0 and 'process_country_gender_confidence' not in params) or ('process_country_gender_confidence' in params and confidence > params['process_country_gender_confidence']):
-                            fcountry.write('%s\t%d' %(name, country))
-                        else:
-                            confidence, country = get_nationality(nationality)
+                        name = convert_to_pinyin(name)
+                        if utils.is_ascii(name):
+                            confidence, country = get_place_of_birth(place_of_birth)
                             if (confidence > 0 and 'process_country_gender_confidence' not in params) or ('process_country_gender_confidence' in params and confidence > params['process_country_gender_confidence']):
                                 fcountry.write('%s\t%d' %(name, country))
-                        confidence, gender = get_gender(male_cnt, female_cnt)
-                        if (confidence > 0 and 'process_country_gender_confidence' not in params) or ('process_country_gender_confidence' in params and confidence > params['process_country_gender_confidence']):
-                            fgender.write('%s\t%d\n' %(name, gender))
-                            if gender == 1:
-                                male_total += 1
                             else:
-                                female_total += 1
+                                confidence, country = get_nationality(nationality)
+                                if (confidence > 0 and 'process_country_gender_confidence' not in params) or ('process_country_gender_confidence' in params and confidence > params['process_country_gender_confidence']):
+                                    fcountry.write('%s\t%d' %(name, country))
+                            confidence, gender = get_gender(male_cnt, female_cnt)
+                            if (confidence > 0 and 'process_country_gender_confidence' not in params) or ('process_country_gender_confidence' in params and confidence > params['process_country_gender_confidence']):
+                                fgender.write('%s\t%d\n' %(name, gender))
+                                if gender == 1:
+                                    male_total += 1
+                                else:
+                                    female_total += 1
                 print 'Male: %d, Female: %d\n' %(male_total, female_total)
 
 def get_place_of_birth(place_of_birth):
@@ -76,20 +80,30 @@ def get_gender(male_cnt, female_cnt):
     return [-1, -1]
 
 def is_chinese(name):
-    if not all(u'\u4e00' <= c <= u'\u9fff' for c in target_name):
-        return false
+    if not all(u'\u4e00' <= c <= u'\u9fff' for c in name):
+        return False
     if len(name) > 3:
-        return false
+        return False
     if len(name) < 2:
-        return false
-    return true
+        return False
+    return True
 
 def convert_to_pinyin(name):
+    name = tradition2simple(name)
     py = Pinyin()
-    target_name = ' '.join(
+    pinyin = ' '.join(
             [string.capitalize(py.get_pinyin(name[1:], '')),
             string.capitalize(py.get_pinyin(name[0], ''))]
     )
+    return pinyin
+
+def simple2tradition(line):
+    line = Converter('zh-hant').convert(line)
+    return line
+
+def tradition2simple(line):
+    line = Converter('zh-hans').convert(line)
+    return line
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
