@@ -15,6 +15,7 @@ from scipy.sparse import csr_matrix
 import cPickle as pickle
 import numpy as np
 import random,math
+from string import ascii_lowercase
 
 def main(params_file):
     params = {}
@@ -34,6 +35,8 @@ def main(params_file):
     #gen_class.loadData(params['process_country_gender_output_file_gender'], params['gender_classifier_model_file'])
     gen_class.loadModel(params['gender_classifier_model_file'])
     t1 = time.time()
+    for c in ascii_lowercase:
+        print gen_class.predict(c)
     print gen_class.predict('Diyi Yang')
     t2 = time.time()
     print("Predict Time: %f ms"%((t2-t1)*1000))
