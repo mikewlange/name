@@ -10,7 +10,7 @@ import scala.io.Source
 
 object wikipedia extends App {
   val s2 = collection.mutable.Set("")
-  for (line <- Source.fromFile("person-id.txt").getLines()) {
+  for (line <- Source.fromFile("data/person-id-zh.txt").getLines()) {
     s2 += (line.trim)
   }
 

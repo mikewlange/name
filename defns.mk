@@ -3,9 +3,15 @@
 # Get People Ids
 GET_PEOPLE_IDS = $(NAME_ROOT)/src/get_people_ids
 GET_PEOPLE_IDS_BIN = $(NAME_ROOT)/bin
+# Get People Ids Chinese
+GET_PEOPLE_IDS_ZH = $(NAME_ROOT)/src/get_people_ids_zh
+GET_PEOPLE_IDS_ZH_BIN = $(NAME_ROOT)/bin
 # Get Wiki Names
 GET_WIKI_NAMES = $(NAME_ROOT)/src/get_wiki_names
 GET_WIKI_NAMES_BIN = $(NAME_ROOT)/bin
+# Get Wiki Names Chinese
+GET_WIKI_NAMES_ZH = $(NAME_ROOT)/src/get_wiki_names_zh
+GET_WIKI_NAMES_ZH_BIN = $(NAME_ROOT)/bin
 
 # third party
 NAME_THIRD_PARTY = $(NAME_ROOT)/third_party

@@ -4,8 +4,11 @@ third_party/bin
 third_party/share
 third_party/include
 data/wiki-pages/*
+data/wiki-pages-zh/*
 data/*tgz
 data/enwiki*
+data/zhwiki/*
+target
 
 *.o
 */*.o
