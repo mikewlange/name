@@ -1,0 +1,6 @@
+# Parameters for running python scripts
+
+process_country_gender_input_file = data/names.txt
+process_country_gender_output_file_gender = data/gender.txt
+process_country_gender_output_file_country = data/country.txt
+gender_classifier_model_file = data/model/gender

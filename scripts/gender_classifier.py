@@ -32,7 +32,7 @@ def main(params_file):
     # read configuration file and check
     utils.read_config(params_file, params)
     gen_class = GenderClassifier()
-    #gen_class.loadData(params['process_country_gender_output_file_gender'], params['gender_classifier_model_file'])
+    #gen_class.loadData(params['process_country_gender_output_file_gender'], params['process_country_gender_output_file_gender_zh'], params['gender_classifier_model_file'])
     gen_class.loadModel(params['gender_classifier_model_file'])
     t1 = time.time()
     for c in ascii_lowercase:
@@ -93,15 +93,34 @@ class GenderClassifier:
         return self.clf.predict(X)[0]
 
 
-    def loadData(self, filename, modelfile_prefix):
+    def loadData(self, filename1, filename2, modelfile_prefix):
         row = []
         col = []
         data = []
         genders = []
         feature_idx = 0
-        with open(filename, 'r') as fin:
+        with open(filename1, 'r') as fin:
             line_idx = 0
             idx = 0
+            for line in fin:
+                line_idx += 1
+                if line_idx % 1000 == 0:
+                    print '%d lines read' %line_idx
+                if line_idx > 500000:
+                    break
+                name, gender = line.strip().split('\t')
+                features = self._nameFeatures(name, False)
+        	for feature in features:
+        	    row.append(idx)
+                    if not feature in self.feature_id:
+                        self.feature_id[feature] = feature_idx
+                        feature_idx += 1
+        	    col.append(self.feature_id[feature])
+        	    data.append(features[feature])
+        	genders.append(int(gender))
+        	idx += 1
+        with open(filename2, 'r') as fin:
+            line_idx = 0
             for line in fin:
                 line_idx += 1
                 if line_idx % 1000 == 0:
