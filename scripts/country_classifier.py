@@ -31,7 +31,7 @@ def main(params_file):
 
     # read configuration file and check
     utils.read_config(params_file, params)
-    gen_class = GenderClassifier()
+    gen_class = CountryClassifier()
     #gen_class.loadData(params['process_country_gender_output_file_country'], params['process_country_gender_output_country_id'], params['country_classifier_model_file'])
     gen_class.loadModel(params['country_classifier_model_file'], params['process_country_gender_output_country_id'])
     t1 = time.time()
@@ -59,7 +59,7 @@ def main(params_file):
     print gen_class.predict('Shayan Doroudi')
     print gen_class.predict('Daniel Guo')
     print gen_class.predict('Christoph Dann')
-class GenderClassifier:
+class CountryClassifier:
     def __init__(self):
         self.non_letters = r'[^a-zA-Z ]'
         self.feature_global = set()
