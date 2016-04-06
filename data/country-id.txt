@@ -1,0 +1,266 @@
+afghanistan	3
+albania	6
+algeria	4
+american samoa	10
+andorra	8
+angola	9
+anguilla	15
+antarctica	17
+antigua and barbuda	1
+argentina	11
+armenia	7
+aruba	0
+ashmore and cartier islands	13
+australia	12
+austria	14
+azerbaijan	5
+bahamas, the	23
+bahrain	18
+bangladesh	24
+barbados	19
+bassas da india	35
+belarus	31
+belgium	22
+belize	25
+benin	30
+bermuda	21
+bhutan	36
+bolivia	27
+bonaire, sint eustatius and saba	179
+bosnia and herzegovina	26
+botswana	20
+bouvet island	38
+brazil	34
+british indian ocean territory	113
+british virgin islands	252
+brunei	39
+bulgaria	37
+burkina faso	247
+burundi	40
+cambodia	42
+cameroon	51
+canada	41
+cape verde	59
+cayman islands	49
+central african republic	57
+chad	43
+chile	48
+china	47
+christmas island	131
+clipperton island	114
+cocos (keeling) islands	50
+colombia	53
+comoros	52
+congo, democratic republic of the	46
+congo, republic of the	45
+cook islands	60
+coral sea islands	55
+costa rica	56
+cote d'ivoire	118
+croatia	107
+cuba	58
+curacao	242
+cyprus	61
+czech republic	76
+denmark	62
+dhekelia sovereign base area	66
+djibouti	63
+dominica	64
+dominican republic	65
+east timor	236
+ecuador	67
+egypt	68
+el salvador	73
+equatorial guinea	70
+eritrea	72
+estonia	71
+ethiopia	74
+europa island	75
+falkland islands (islas malvinas)	80
+faroe islands	82
+fiji	79
+finland	78
+france	84
+french guiana	77
+french polynesia	83
+french southern and antarctic lands	85
+gabon	87
+gambia, the	86
+gaza strip	102
+georgia	88
+germany	94
+ghana	89
+gibraltar	90
+glorioso islands	95
+greece	98
+greenland	93
+grenada	91
+guadeloupe	96
+guam	97
+guatemala	99
+guernsey	92
+guinea	100
+guinea-bissau	193
+guyana	101
+haiti	103
+heard island and mcdonald islands	105
+holy see (vatican city)	255
+honduras	106
+hong kong	104
+hungary	108
+iceland	109
+india	112
+indonesia	110
+iran	115
+iraq	119
+ireland	69
+isle of man	111
+israel	116
+italy	117
+jamaica	122
+jan mayen	123
+japan	120
+jersey	121
+jordan	124
+juan de nova island	125
+kazakhstan	134
+kenya	126
+kiribati	129
+korea, north	128
+korea, south	130
+kosovo	133
+kuwait	132
+kyrgyzstan	127
+laos	135
+latvia	137
+lebanon	136
+lesotho	143
+liberia	139
+libyan arab	145
+liechtenstein	142
+lithuania	138
+luxembourg	144
+macau	148
+madagascar	146
+malawi	153
+malaysia	165
+maldives	163
+mali	156
+malta	161
+marshall islands	197
+martinique	147
+mauritania	160
+mauritius	159
+mayotte	150
+mexico	164
+micronesia, federated states of	81
+moldova, republic of	149
+monaco	157
+mongolia	151
+montenegro	154
+montserrat	152
+morocco	158
+mozambique	166
+myanmar	29
+namibia	256
+nauru	177
+navassa island	33
+nepal	176
+netherlands	173
+new caledonia	167
+new zealand	181
+nicaragua	180
+niger	170
+nigeria	172
+niue	168
+no man's land	174
+norfolk island	169
+northern mariana islands	54
+norway	175
+oman	162
+pakistan	187
+palau	192
+palestine, state of	257
+panama	189
+papua new guinea	191
+paracel islands	185
+paraguay	182
+peru	184
+philippines	200
+pitcairn islands	183
+poland	188
+portugal	190
+puerto rico	201
+qatar	194
+reunion	195
+romania	199
+russia	202
+rwanda	203
+saint barthelemy	28
+saint helena	210
+saint kitts and nevis	206
+saint lucia	218
+saint martin	198
+saint pierre and miquelon	205
+saint vincent and the grenadines	250
+samoa	260
+san marino	213
+sao tome and principe	234
+saudi arabia	204
+senegal	209
+serbia	196
+serbia and montenegro	262
+seychelles	207
+sierra leone	212
+singapore	214
+sint maarten	223
+slovakia	140
+slovenia	211
+solomon islands	32
+somalia	215
+south africa	208
+south georgia and the islands	222
+south sudan	217
+spain	216
+spratly islands	186
+sri lanka	44
+sudan	219
+suriname	178
+svalbard	220
+swaziland	261
+sweden	221
+switzerland	225
+syrian arab republic	224
+taiwan	239
+tajikistan	229
+tanzania, united republic of	241
+thailand	228
+the former yugoslav republic of macedonia	155
+togo	233
+tokelau	231
+tonga	232
+trinidad and tobago	226
+tromelin island	227
+tunisia	235
+turkey	237
+turkmenistan	240
+turks and caicos islands	230
+tuvalu	238
+uganda	243
+ukraine	245
+united arab emirates	2
+united kingdom	244
+united states	246
+united states minor outlying islands	141
+uruguay	248
+uzbekistan	249
+vanuatu	171
+venezuela	251
+vietnam	253
+virgin islands (us)	254
+wallis and futuna	258
+western sahara	259
+yemen	263
+zambia	264
+zimbabwe	265
+åland islands	16

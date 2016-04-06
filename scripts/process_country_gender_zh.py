@@ -24,9 +24,9 @@ def main(params_file):
     process_country_gender(params)
 
 def process_country_gender(params):
-    with codecs.open(params['process_country_gender_input_file'], encoding='utf-8', mode='r') as fin:
-        with open(params['process_country_gender_output_file_gender'], 'w') as fgender:
-            with open(params['process_country_gender_output_file_country'], 'w') as fcountry:
+    with codecs.open(params['process_country_gender_input_file_zh'], encoding='utf-8', mode='r') as fin:
+        with open(params['process_country_gender_output_file_gender_zh'], 'w') as fgender:
+            with open(params['process_country_gender_output_file_country_zh'], 'w') as fcountry:
                 line_idx = 0
                 male_total = 0
                 female_total = 0

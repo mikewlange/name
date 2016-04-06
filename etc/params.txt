@@ -1,7 +1,12 @@
 # Parameters for running python scripts
 
-process_country_gender_input_file = data/names-zh.txt
+process_country_gender_input_file = data/names.txt
+process_country_gender_input_file_zh = data/names-zh.txt
+process_country_gender_countries = data/countries/GEODATASOURCE-COUNTRY.TXT
+process_country_gender_cities = data/countries/GEODATASOURCE-CITIES-FREE.TXT
+process_country_gender_output_country_id = data/country-id.txt
 process_country_gender_output_file_gender = data/gender.txt
 process_country_gender_output_file_gender_zh = data/gender-zh.txt
-process_country_gender_output_file_country = data/country-zh.txt
+process_country_gender_output_file_country = data/country.txt
+process_country_gender_output_file_country_zh = data/country-zh.txt
 gender_classifier_model_file = data/model/gender-zh
