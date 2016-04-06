@@ -84,7 +84,7 @@ def process_country_gender(params):
                         else:
                             confidence, country = get_nationality(nationality, city_dict, country_dict)
                             if (confidence > 0 and 'process_country_gender_confidence' not in params) or ('process_country_gender_confidence' in params and confidence > params['process_country_gender_confidence']):
-                                fcountry.write('%s\t%d' %(name, country))
+                                fcountry.write('%s\t%d\n' %(name, country))
                         confidence, gender = get_gender(male_cnt, female_cnt)
                         if (confidence > 0 and 'process_country_gender_confidence' not in params) or ('process_country_gender_confidence' in params and confidence > params['process_country_gender_confidence']):
                             fgender.write('%s\t%d\n' %(name, gender))
@@ -113,7 +113,8 @@ def get_place_of_birth(place_of_birth, city_dict, country_dict):
         c = place_of_birth[i]
         if c in city_tmp:
             if city_tmp[c][0] != 'N':
-                return [1, city_tmp[c][0]]
+                if i == len(place_of_birth)-1 or place_of_birth[i+1] == ' ':
+                    return [1, city_tmp[c][0]]
             city_tmp = city_tmp[c][1]
             i = i + 1
             if c == ' ' and flag:

@@ -9,4 +9,6 @@ process_country_gender_output_file_gender = data/gender.txt
 process_country_gender_output_file_gender_zh = data/gender-zh.txt
 process_country_gender_output_file_country = data/country.txt
 process_country_gender_output_file_country_zh = data/country-zh.txt
-gender_classifier_model_file = data/model/gender-zh
+gender_classifier_model_file = data/model/gender
+gender_classifier_model_file_zh = data/model/gender-zh
+country_classifier_model_file = data/model/country

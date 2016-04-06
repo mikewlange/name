@@ -32,11 +32,9 @@ def main(params_file):
     # read configuration file and check
     utils.read_config(params_file, params)
     gen_class = GenderClassifier()
-    gen_class.loadData(params['process_country_gender_output_file_country'], params['process_country_gender_output_country_id'], params['gender_classifier_model_file'])
-    #gen_class.loadModel(params['gender_classifier_model_file'], params['process_country_gender_output_country_id'])
+    gen_class.loadData(params['process_country_gender_output_file_country'], params['process_country_gender_output_country_id'], params['country_classifier_model_file'])
+    #gen_class.loadModel(params['country_classifier_model_file'], params['process_country_gender_output_country_id'])
     t1 = time.time()
-    for c in ascii_lowercase:
-        print gen_class.predict(c)
     print gen_class.predict('Diyi Yang')
     t2 = time.time()
     print("Predict Time: %f ms"%((t2-t1)*1000))
@@ -77,7 +75,7 @@ class GenderClassifier:
         with open(country_id_file, 'r') as fin:
             for line in fin:
                 country,id = line.strip().split('\t')
-                self.country_id[id] = country
+                self.country_id[int(id)] = country
 
     def predict(self, name):
         features = self._nameFeatures(name)
@@ -102,19 +100,21 @@ class GenderClassifier:
         with open(country_id_file, 'r') as fin:
             for line in fin:
                 country,id = line.strip().split('\t')
-                self.country_id[id] = country
+                self.country_id[int(id)] = country
         row = []
         col = []
         data = []
         genders = []
         feature_idx = 0
-        with open(filename1, 'r') as fin:
+        with open(filename, 'r') as fin:
             line_idx = 0
             idx = 0
             for line in fin:
                 line_idx += 1
                 if line_idx % 1000 == 0:
                     print '%d lines read' %line_idx
+                    #if line_idx > 10000:
+                    #    break
                 name, gender = line.strip().split('\t')
                 features = self._nameFeatures(name, False)
         	for feature in features:
@@ -133,7 +133,7 @@ class GenderClassifier:
         self.Y = np.array(genders)
         inds = range(len(genders))
         random.shuffle(inds)
-        inds = inds[10000:]
+        #inds = inds[10000:]
         row = np.array(row)
         col = np.array(col)
         data = np.array(data)

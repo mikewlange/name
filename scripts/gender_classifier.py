@@ -32,8 +32,8 @@ def main(params_file):
     # read configuration file and check
     utils.read_config(params_file, params)
     gen_class = GenderClassifier()
-    #gen_class.loadData(params['process_country_gender_output_file_gender'], params['process_country_gender_output_file_gender_zh'], params['gender_classifier_model_file'])
-    gen_class.loadModel(params['gender_classifier_model_file'])
+    #gen_class.loadData(params['process_country_gender_output_file_gender'], params['process_country_gender_output_file_gender_zh'], params['gender_classifier_model_file_zh'])
+    gen_class.loadModel(params['gender_classifier_model_file_zh'])
     t1 = time.time()
     for c in ascii_lowercase:
         print gen_class.predict(c)
