@@ -145,8 +145,6 @@ class GenderClassifier:
         self.X = self.X[inds,:]
         self.Y = self.Y[inds]
         print self.Y
-        print len(self.Y)
-        print np.sum(self.Y)
 
         self.clf = tree.DecisionTreeClassifier(min_samples_leaf=10)
         #self.clf = RandomForestClassifier(n_estimators=100, min_samples_leaf=10)
