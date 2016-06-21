@@ -2,7 +2,7 @@
 
 ## Website:
 
-[namepredict.com](https://namepredict.com)
+[www.namepredict.com](http://www.namepredict.com)
 
 ## Usage:
 
